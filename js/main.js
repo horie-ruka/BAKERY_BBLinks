@@ -209,33 +209,101 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Contact Form Feedback Handler
+  // Contact Form Web3Forms Handler
   const contactForm = document.getElementById('bakeryContactForm');
   const formSuccessMessage = document.getElementById('formSuccessMessage');
+  const menuInquiryButtons = document.querySelectorAll('.menu-inquiry-btn');
+
+  menuInquiryButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const breadName = button.dataset.breadName || '選択したパン';
+      const messageField = contactForm ? contactForm.querySelector('[name="message"]') : null;
+      const contactTypeField = contactForm ? contactForm.querySelector('[name="contact_type"]') : null;
+      const prefix = `[${breadName}]についての問い合わせ`;
+
+      if (contactTypeField) {
+        contactTypeField.value = '取り置き予約';
+      }
+
+      if (messageField) {
+        const currentMessage = messageField.value.trim();
+        const messageWithoutPreviousBread = currentMessage.replace(/^\[[^\]]+\]についての問い合わせ\s*/u, '').trim();
+        messageField.value = messageWithoutPreviousBread
+          ? `${prefix}\n\n${messageWithoutPreviousBread}`
+          : prefix;
+      }
+
+      const contactTarget = contactForm
+        ? contactForm.closest('.contact-form-box') || contactForm
+        : document.getElementById('contact');
+      if (contactTarget) {
+        contactTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      if (messageField) {
+        setTimeout(() => {
+          messageField.focus();
+          messageField.setSelectionRange(messageField.value.length, messageField.value.length);
+        }, 500);
+      }
+    });
+  });
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitBtn ? submitBtn.textContent : '';
+
+      if (formSuccessMessage) {
+        formSuccessMessage.style.display = 'none';
+      }
+
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = '送信中...';
       }
 
-      setTimeout(() => {
-        if (contactForm) {
-          contactForm.reset();
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+          throw new Error(data.message || '送信に失敗しました。');
         }
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = '送信する';
-        }
+
         if (formSuccessMessage) {
+          formSuccessMessage.innerHTML = [
+            '<p style="font-weight: bold; color: var(--text-flore-dark);">送信完了しました</p>',
+            '<p style="font-size: 0.9rem; margin-top: 0.4rem;">お問い合わせありがとうございます。内容を確認次第、折り返しご連絡いたします。</p>'
+          ].join('');
           formSuccessMessage.style.display = 'block';
           formSuccessMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
-      }, 1000);
+
+        contactForm.reset();
+      } catch (error) {
+        if (formSuccessMessage) {
+          formSuccessMessage.innerHTML = [
+            '<p style="font-weight: bold; color: #B3402A;">送信できませんでした</p>',
+            '<p style="font-size: 0.9rem; margin-top: 0.4rem;">時間をおいてもう一度お試しください。お急ぎの場合はお電話でお問い合わせください。</p>'
+          ].join('');
+          formSuccessMessage.style.display = 'block';
+          formSuccessMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalButtonText || '送信する';
+        }
+      }
     });
   }
 });

@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>メニュー一覧 | BAKERY BBLinks - 池袋のからだにやさしいパン</title>
+  <title>メニュー | BAKERY BBLinks - 池袋のからだにやさしいパン</title>
   <meta name="description"
     content="BAKERY BBLinksの全メニュー一覧。やさしい食パン、こどもミルクパン、クロワッサン、季節の野菜フォカッチャなど、シンプルでからだに負担の少ない手作りパンと焼き菓子をご紹介。">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20260817-menu-fix">
   <style>
     .page-header {
       background: transparent;
@@ -52,13 +52,13 @@
   </style>
 </head>
 
-<body>
+<body class="menu-page">
 
   <!-- Unified Top Bar Header -->
   <header style="padding: 1.5rem 2rem 0.5rem; width: 100%;">
     <div class="flore-top-bar">
       <a href="index.html" class="flore-logo-area">
-        <img src="../images/店舗ロゴ.png" alt="BAKERY BBLinks ロゴ">
+        <img src="images/店舗ロゴ.png" alt="BAKERY BBLinks ロゴ">
         <span class="flore-logo-title">BAKERY BBLinks</span>
       </a>
 
@@ -72,7 +72,7 @@
           <li><a href="menu.html" class="flore-nav-link"
               style="border-bottom: 2px solid var(--text-flore-dark);">メニュー</a></li>
           <li><a href="index.html#access" class="flore-nav-link">店舗情報</a></li>
-          <li><a href="index.html#contact" class="flore-nav-link"
+          <li><a href="#contact" class="flore-nav-link"
               style="background: rgba(255,255,255,0.7); padding: 0.4rem 1.2rem; border-radius: 99px;">お問い合わせ</a></li>
         </ul>
       </nav>
@@ -102,7 +102,7 @@
             池袋の小さなお店のため数に限りがございます。お目当てのパンがある方は、お電話またはWebフォームからのお取り置き予約がおすすめです。
           </p>
         </div>
-        <a href="index.html#contact" class="btn-primary" style="white-space: nowrap;">お取り置きを予約する</a>
+        <a href="#contact" class="btn-primary" style="white-space: nowrap;">お取り置きを予約する</a>
       </div>
 
       <!-- All 7 Products Grid -->
@@ -111,13 +111,14 @@
         <!-- 1. クロワッサン -->
         <div class="menu-card">
           <div class="menu-card-img-wrap">
-            <img src="../images/クロワッサン.png" alt="クロワッサン" class="menu-card-img">
+            <img src="images/クロワッサン.png" alt="クロワッサン" class="menu-card-img">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-title">クロワッサン</h3>
             <p class="menu-card-desc">発酵バターの香りとサクサク感がたまらない定番の人気商品です。</p>
             <div class="menu-card-footer">
               <span class="menu-card-price">1個 220円（税込）</span>
+              <a href="#contact" class="menu-inquiry-btn" data-bread-name="クロワッサン">これについて問い合わせる、予約する</a>
             </div>
           </div>
         </div>
@@ -125,13 +126,14 @@
         <!-- 2. 全粒粉ロール -->
         <div class="menu-card">
           <div class="menu-card-img-wrap">
-            <img src="../images/全粒粉ロール.png" alt="全粒粉ロール" class="menu-card-img">
+            <img src="images/全粒粉ロール.png" alt="全粒粉ロール" class="menu-card-img">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-title">全粒粉ロール</h3>
             <p class="menu-card-desc">香ばしさと自然な甘みを楽しめる小さめロールパン。朝食やおやつにぴったり。</p>
             <div class="menu-card-footer">
               <span class="menu-card-price">3個 360円（税込）</span>
+              <a href="#contact" class="menu-inquiry-btn" data-bread-name="全粒粉ロール">これについて問い合わせる、予約する</a>
             </div>
           </div>
         </div>
@@ -139,13 +141,14 @@
         <!-- 3. 季節の野菜フォカッチャ -->
         <div class="menu-card">
           <div class="menu-card-img-wrap">
-            <img src="../images/季節の野菜フォカッチャ.png" alt="季節の野菜フォカッチャ" class="menu-card-img">
+            <img src="images/季節の野菜フォカッチャ.png" alt="季節の野菜フォカッチャ" class="menu-card-img">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-title">季節の野菜フォカッチャ</h3>
             <p class="menu-card-desc">旬の野菜をたっぷりのせた、ランチにも合う彩り鮮やかな惣菜パン。</p>
             <div class="menu-card-footer">
               <span class="menu-card-price">1個 320円（税込）</span>
+              <a href="#contact" class="menu-inquiry-btn" data-bread-name="季節の野菜フォカッチャ">これについて問い合わせる、予約する</a>
             </div>
           </div>
         </div>
@@ -153,13 +156,14 @@
         <!-- 4. やさしい食パン -->
         <div class="menu-card">
           <div class="menu-card-img-wrap">
-            <img src="../images/やさしい食パン.png" alt="やさしい食パン" class="menu-card-img">
+            <img src="images/やさしい食パン.png" alt="やさしい食パン" class="menu-card-img">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-title">やさしい食パン</h3>
             <p class="menu-card-desc">ふんわり軽く、毎日の朝食に合う当店の看板パン。トーストでも生でも美味しく召し上がれます。</p>
             <div class="menu-card-footer">
               <span class="menu-card-price">1斤 420円（税込）</span>
+              <a href="#contact" class="menu-inquiry-btn" data-bread-name="やさしい食パン">これについて問い合わせる、予約する</a>
             </div>
           </div>
         </div>
@@ -167,13 +171,14 @@
         <!-- 5. こどもミルクパン -->
         <div class="menu-card">
           <div class="menu-card-img-wrap">
-            <img src="../images/こどもミルクパン.png" alt="こどもミルクパン" class="menu-card-img">
+            <img src="images/こどもミルクパン.png" alt="こどもミルクパン" class="menu-card-img">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-title">こどもミルクパン</h3>
             <p class="menu-card-desc">小さなお子さまにも食べやすい、やわらかな甘さとふんわり食感。</p>
             <div class="menu-card-footer">
               <span class="menu-card-price">2個 280円（税込）</span>
+              <a href="#contact" class="menu-inquiry-btn" data-bread-name="こどもミルクパン">これについて問い合わせる、予約する</a>
             </div>
           </div>
         </div>
@@ -181,13 +186,14 @@
         <!-- 6. 池袋はちみつブレッド -->
         <div class="menu-card">
           <div class="menu-card-img-wrap">
-            <img src="../images/池袋はちみつブレッド.png" alt="池袋はちみつブレッド" class="menu-card-img">
+            <img src="images/池袋はちみつブレッド.png" alt="池袋はちみつブレッド" class="menu-card-img">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-title">池袋はちみつブレッド</h3>
             <p class="menu-card-desc">ほんのり甘く、手みやげにも選ばれるミニブレッド。やさしいはちみつの風味。</p>
             <div class="menu-card-footer">
               <span class="menu-card-price">1本 580円（税込）</span>
+              <a href="#contact" class="menu-inquiry-btn" data-bread-name="池袋はちみつブレッド">これについて問い合わせる、予約する</a>
             </div>
           </div>
         </div>
@@ -195,13 +201,14 @@
         <!-- 7. 日替わり焼き菓子 -->
         <div class="menu-card">
           <div class="menu-card-img-wrap">
-            <img src="../images/日替わり焼き菓子.png" alt="日替わり焼き菓子" class="menu-card-img">
+            <img src="images/日替わり焼き菓子.png" alt="日替わり焼き菓子" class="menu-card-img">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-title">日替わり焼き菓子</h3>
             <p class="menu-card-desc">素材の味を生かしたスコーンや小さな焼き菓子。日替わりのおたのしみ。</p>
             <div class="menu-card-footer">
               <span class="menu-card-price">220円（税込）から</span>
+              <a href="#contact" class="menu-inquiry-btn" data-bread-name="日替わり焼き菓子">これについて問い合わせる、予約する</a>
             </div>
           </div>
         </div>
@@ -212,6 +219,91 @@
         <a href="index.html" class="btn-primary">トップページへ戻る</a>
       </div>
 
+      <section class="menu-contact-section" id="contact">
+        <div class="contact-wrapper">
+          <div class="contact-info-box">
+            <div>
+              <h3 class="contact-info-title">お気軽にご連絡ください</h3>
+              <p class="contact-info-desc">
+                お取り置きのご予約や、パンに関するご質問など、お電話・メール・フォームより受付けております。小さなお店のため、お早めのご連絡がおすすめです。
+              </p>
+              <div class="contact-direct-list">
+                <div class="contact-direct-item">
+                  <div class="contact-icon">📞</div>
+                  <div>
+                    <div class="contact-direct-label">お電話での受付</div>
+                    <div class="contact-direct-val"><a href="tel:03-1234-5678">03-1234-5678</a></div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">（受付時間 7:00〜17:00 水木休）</div>
+                  </div>
+                </div>
+
+                <div class="contact-direct-item">
+                  <div class="contact-icon">✉️</div>
+                  <div>
+                    <div class="contact-direct-label">メールでの受付</div>
+                    <div class="contact-direct-val"><a href="mailto:info@bblinks-bakery.jp"
+                        style="font-size: 0.95rem;">info@bblinks-bakery.jp</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed rgba(74, 48, 34, 0.15);">
+              <p style="font-size: 0.85rem; color: var(--text-muted);">
+                ※焼き上がり時間や当日の在庫状況についてのお急ぎのお問い合わせは、お電話が最もスムーズです。
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-form-box">
+            <div id="formSuccessMessage" role="status" aria-live="polite"
+              style="display: none; background: rgba(255,255,255,0.9); border: 2px solid var(--text-flore-dark); padding: 1.2rem; border-radius: var(--border-radius-sm); margin-bottom: 1.5rem; text-align: center;">
+              <p style="font-weight: bold; color: var(--text-flore-dark);">送信完了しました</p>
+              <p style="font-size: 0.9rem; margin-top: 0.4rem;">内容を確認次第、折り返しご連絡いたします。</p>
+            </div>
+
+            <form id="bakeryContactForm">
+              <input type="hidden" name="access_key" value="2ae0ad49-0ae6-4089-946b-30d89a0eb9bd">
+              <input type="hidden" name="subject" value="BAKERY BBLinks お問い合わせフォーム">
+              <input type="hidden" name="from_name" value="BAKERY BBLinks Webサイト">
+              <div class="form-group">
+                <label for="menuUserName" class="form-label">お名前 <span class="required">必須</span></label>
+                <input type="text" id="menuUserName" name="name" class="form-control" placeholder="例：山田 太郎" required>
+              </div>
+
+              <div class="form-group">
+                <label for="menuUserEmail" class="form-label">メールアドレス <span class="required">必須</span></label>
+                <input type="email" id="menuUserEmail" name="email" class="form-control"
+                  placeholder="例：example@bblinks.jp" required>
+              </div>
+
+              <div class="form-group">
+                <label for="menuUserPhone" class="form-label">お電話番号</label>
+                <input type="tel" id="menuUserPhone" name="phone" class="form-control" placeholder="例：090-1234-5678">
+              </div>
+
+              <div class="form-group">
+                <label for="menuContactType" class="form-label">ご用件 <span class="required">必須</span></label>
+                <select id="menuContactType" name="contact_type" class="form-control" required>
+                  <option value="">選択してください</option>
+                  <option value="取り置き予約">パンのお取り置き予約</option>
+                  <option value="商品について">商品・アレルギーに関するご質問</option>
+                  <option value="その他">その他のお問い合わせ</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="menuUserMessage" class="form-label">メッセージ・ご予約内容 <span class="required">必須</span></label>
+                <textarea id="menuUserMessage" name="message" class="form-control"
+                  placeholder="お取り置き希望のパン・数量・ご来店予定日時などをご入力ください。" required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">送信する</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -221,7 +313,7 @@
       <div class="footer-content">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="../images/店舗ロゴ.png" alt="BAKERY BBLinks">
+            <img src="images/店舗ロゴ.png" alt="BAKERY BBLinks">
             <span>BAKERY BBLinks</span>
           </div>
           <p class="footer-desc">
@@ -245,7 +337,7 @@
             <h4>インフォメーション</h4>
             <ul class="footer-nav-list">
               <li><a href="index.html#access">店舗情報・アクセス</a></li>
-              <li><a href="index.html#contact">お問い合わせ・ご予約</a></li>
+              <li><a href="#contact">お問い合わせ・ご予約</a></li>
               <li>営業時間: 7:00〜17:00</li>
               <li>定休日: 水曜日・木曜日</li>
             </ul>
@@ -259,7 +351,7 @@
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script src="js/main.js?v=20260817-menu-fix"></script>
 </body>
 
 </html>
